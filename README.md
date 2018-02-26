@@ -139,6 +139,12 @@ export const resolvers = {
 
 The exact same steps will work for mutations as well.
 
+## Cache configuration
+
+You can use a directive called `@cacheControl` to configure how you want your types/fields to be cached. In reality this directive was created by Apollo, but VTEX IO takes advantage of it to automatically provide more caching features for you (such as CDN for React apps).
+
+Check its usage information [here](https://www.apollographql.com/docs/engine/caching.html#cache-hints).
+
 # Calling the API
 
 There are different ways to call your new GraphQL API. We'll show some of them here.
