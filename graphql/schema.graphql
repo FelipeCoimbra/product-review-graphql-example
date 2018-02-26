@@ -4,7 +4,7 @@
 # automatically generate a CRUD of queries and mutations for handling
 # this data and storing it in Masterdata.
 type Review @autopersist @cacheControl(maxAge: LONG) {
-  # Autopersisted types must have an ID
+  # NOTE: Autopersisted types must have an ID
   id: ID!
 
   # This `@searchable` directive will allow you to fetch all reviews from

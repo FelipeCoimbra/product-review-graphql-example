@@ -1,3 +1,4 @@
+// NOTE: Any dependencies should be defined at `node/package.json`
 import random from 'random-js'
 
 /**

@@ -3,7 +3,7 @@
   "vendor": "vtex",
   "version": "0.0.0",
   "title": "Product Review GraphQL Example",
-  "description": "Example app, showcasing a GraphQL API for a product review page. See `vtex.product-review-react-example` for the frontend part.",
+  "description": "Example app, showcasing a GraphQL API for a product review page.",
   "mustUpdateAt": "2019-02-23",
   "categories": [],
   "registries": [
