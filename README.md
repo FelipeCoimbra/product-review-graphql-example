@@ -53,7 +53,7 @@ The easiest way to build a simple GraphQL API is by using autopersisted types. F
 
 ```graphql
 type Review @autopersist {
-  id: ID!
+  id: ID! # NOTE: Autopersisted types must have an ID
   author: String
   comment: Comment
 }
@@ -82,7 +82,7 @@ What if you need to be able to fetch reviews by author name? You can add a direc
 
 ```graphql
 type Review @autopersist {
-  id: ID! # NOTE: Autopersisted types must have an ID
+  id: ID!
   author: String @searchable
   comment: Comment
 }
