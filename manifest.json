@@ -13,5 +13,6 @@
   "dependencies": {},
   "builders": {
     "graphql": "1.x"
-  }
+  },
+  "credentialType": "absolute"
 }
