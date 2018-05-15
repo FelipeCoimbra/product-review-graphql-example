@@ -1,18 +1,18 @@
 {
   "name": "product-review-graphql-example",
   "vendor": "vtex",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "title": "Product Review GraphQL Example",
-  "description": "Example app, showcasing a GraphQL API for a product review page.",
-  "mustUpdateAt": "2019-02-23",
-  "categories": [],
-  "registries": [
-    "smartcheckout"
+  "description": "Example app showcasing a simple GraphQL API for a product review page persisted to VBase",
+  "policies": [
+    {
+      "name": "vbase-read-only"
+    }
   ],
-  "settingsSchema": {},
   "dependencies": {},
   "builders": {
-    "graphql": "1.x"
+    "graphql": "1.x",
+    "node": "3.x"
   },
   "credentialType": "absolute"
 }

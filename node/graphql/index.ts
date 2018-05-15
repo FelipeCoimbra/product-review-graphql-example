@@ -1,28 +1,35 @@
-// NOTE: Any dependencies should be defined at `node/package.json`
 import random from 'random-js'
+import VBase from './vbase'
 
-/**
- * NOTE: All resolvers should be included in this exported object, following
- * the usual conventions in GraphQL. Check out the following for more
- * details: https://www.apollographql.com/docs/graphql-tools/resolvers.html.
- **/
+const reviewsBucket = 'reviews'
+
+const generateId = () => random().integer(0, 99999999).toString()
+
 export const resolvers = {
   Query: {
-    liveViewers: (root, args, context, info) => {
-      /**
-       * NOTE: The `productId` argument will be available inside `args`,
-       * for example:
-       * const {productId} = args
-       */
-
-      /**
-       * NOTE: The `context` parameter has some useful data coming from VTEX IO,
-       * for example:
-       * const {vtex: {account, workspace}, request, response} = context
-       */
-
-      // You can do whatever you need here.
-      return random().integer(1000, 10000)
-    }
+    listReviews: async (root, args, ctx, info) => {
+      const vbase = new VBase(ctx.vtex)
+      return await vbase.listContents(reviewsBucket)
+    },
+    review: async (root, args, ctx, info) => {
+      const vbase = new VBase(ctx.vtex)
+      return vbase.get(reviewsBucket, args.id)
+    },
+  },
+  Mutation: {
+    addReview: async (root, args, ctx, info) => {
+      const vbase = new VBase(ctx.vtex)
+      const id = generateId()
+      const review = {
+        id: id,
+        author: args.review.author,
+        comment: {
+          timestamp: Date.now().toString(),
+          text: args.review.comment,
+        }
+      }
+      await vbase.save(reviewsBucket, id, review)
+      return id
+    },
   },
 }
