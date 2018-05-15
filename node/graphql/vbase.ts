@@ -27,6 +27,10 @@ export default class VBase {
   }
 
   save = async (bucket, path, data) => {
-    await this.client.saveFile(bucket, path, jsonStream(data))
+    try {
+      await this.client.saveFile(bucket, path, jsonStream(data))
+    } catch (ex) {
+      throw new Error(`Save request for key ${path} in bucket ${bucket} failed!`)
+    }
   }
 }
