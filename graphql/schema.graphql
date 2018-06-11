@@ -1,5 +1,4 @@
 # Queries
-# Test URL: http://bit.ly/2KngEVS
 
 type Review {
   id: ID!
