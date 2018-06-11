@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@types/node@^10.3.2":
+  version "10.3.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.2.tgz#3840ec6c12556fdda6e0e6d036df853101d732a4"
+
+"@types/random-js@^1.0.30":
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/@types/random-js/-/random-js-1.0.30.tgz#33fd57ae4fdbdc1aed3f76a875bd1da5a9428808"
+
 "@vtex/api@^0.40.0":
   version "0.40.0"
   resolved "https://registry.yarnpkg.com/@vtex/api/-/api-0.40.0.tgz#70abf4601764a6abf9a5b3b30732c8cf23ce925d"

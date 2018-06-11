@@ -7,6 +7,7 @@
     "random-js": "^1.0.8"
   },
   "devDependencies": {
+    "@types/node": "^10.3.2",
     "@types/random-js": "^1.0.30"
   }
 }
