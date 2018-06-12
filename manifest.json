@@ -6,7 +6,7 @@
   "description": "Example app showcasing a simple GraphQL API for a product review page persisted to VBase",
   "policies": [
     {
-      "name": "vbase-read-only"
+      "name": "vbase-read-write"
     }
   ],
   "dependencies": {},
