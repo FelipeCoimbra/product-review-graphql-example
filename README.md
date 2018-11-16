@@ -47,61 +47,9 @@ The schema definition is the first step for creating any GraphQL API. It should 
 
 Besides the original features from GraphQL [(check them out)](http://graphql.org/learn/queries/), VTEX IO supports a few extra that will be explained here.
 
-## Autopersisted types
-
-The easiest way to build a simple GraphQL API is by using autopersisted types. For example, let's say that you have a type named `Review`. You can add a directive called `@autopersist` to it, like this:
-
-```graphql
-type Review @autopersist {
-  id: ID! # NOTE: Autopersisted types must have an ID
-  author: String
-  comment: Comment
-}
-```
-
-That will automatically generate a set of CRUD queries and mutations for this type, using Masterdata for fetching and writing data. The generated queries/mutations for this example would be something like this:
-
-```graphql
-type Query {
-  review(id: ID!): Review
-  reviews: [Review]
-}
-
-type Mutation {
-  createReview(data: CreateReviewInput): Review
-  updateReview(data: ReviewInput): Review
-  deleteReview(id: ID!): Boolean
-}
-```
-
-That's all you need to do to have a simple working GraphQL API.
-
-### Searchable fields
-
-What if you need to be able to fetch reviews by author name? You can add a directive called `@searchable` for this, for example:
-
-```graphql
-type Review @autopersist {
-  id: ID!
-  author: String @searchable
-  comment: Comment
-}
-```
-
-This will add an optional `author` param to the `reviews` query, which will automatically do the desired filtering for you. This is the how the generated query will look like in this case:
-
-```graphql
-type Query {
-  review(id: ID!): Review
-  reviews(author: String): [Review]
-}
-```
-
 ## Resolver implementation
 
-What if you need more custom behavior, instead of a just a simple CRUD?
-
-In this case you can define your own queries or mutations. For example, let's say you want to show the number of people currently viewing the product page, and that this has custom behavior for some reason. You'd first define a query in `graphql/schema.graphql`, like this:
+You can define your own queries or mutations. For example, let's say you want to show the number of people currently viewing the product page, and that this has custom behavior for some reason. You'd first define a query in `graphql/schema.graphql`, like this:
 
 ```graphql
 type Query {
