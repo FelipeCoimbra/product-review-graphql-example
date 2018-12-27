@@ -4,7 +4,8 @@
   "version": null,
   "dependencies": {
     "@vtex/api": "^0.40.0",
-    "random-js": "^1.0.8"
+    "random-js": "^1.0.8",
+    "typescript": "^3.2.2"
   },
   "devDependencies": {
     "@types/node": "^10.3.2",
