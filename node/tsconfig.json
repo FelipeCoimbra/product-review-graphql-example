@@ -15,6 +15,6 @@
   "typeAcquisition": {
     "enable": false
   },
-  "include": ["../typings/**/*", "./**/*"],
+  "include": ["../graphql-ts/**/*", "./**/*"],
   "exclude": ["node_modules", "./dist/**/*"]
 }

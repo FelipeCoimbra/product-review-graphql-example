@@ -1,6 +1,7 @@
 import random from 'random-js'
 import VBase from './vbase'
 import { IOContext } from '@vtex/api'
+import { Review, ReviewInput } from '../../graphql-ts/otherFile'
 
 const reviewsBucket = 'reviews'
 

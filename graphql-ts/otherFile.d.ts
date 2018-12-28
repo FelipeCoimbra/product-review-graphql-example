@@ -3,22 +3,23 @@
 */
 declare global {
 
-  interface Review {
-    id: ID,
-    author: string,
-    comment: Comment
-  }
+}
 
-  interface Comment {
-    timestamp: string,
-    text: string
-  }
+export interface Review {
+  id: ID,
+  author: string,
+  comment: Comment
+}
 
-  /** @graphql input */
-  interface ReviewInput {
-    author: string,
-    comment: string
-  }
+interface Comment {
+  timestamp: string,
+  text: string
+}
+
+/** @graphql input */
+export interface ReviewInput {
+  author: string,
+  comment: string
 }
 
 export interface Query {
