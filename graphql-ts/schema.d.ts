@@ -1,12 +1,15 @@
-import {Query as QueryRoot, Mutation as MutationRoot} from './otherFile'
+import { Review, ReviewComment, ReviewInput } from './otherFile'
 
 declare global {
   /** @graphql ID */
   type ID = string
 }
 
-/** @graphql schema */
-export interface Schema {
-  query: QueryRoot,
-  mutation: MutationRoot
+interface Query {
+  review(args: {id: ID}): ReviewComment,
+  listReviews: Review[]
+}
+
+interface Mutation {
+  addReview(args: {review: ReviewInput}): ID
 }
